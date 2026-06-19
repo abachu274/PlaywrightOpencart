@@ -1,0 +1,4 @@
+Error Occurred while clicking on my account: Error: locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for getByText('My Account')
+

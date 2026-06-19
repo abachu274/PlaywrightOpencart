@@ -1,0 +1,18 @@
+Error Occured while clicking on Register: Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('//a[text()=\'Register\']')
+    - locator resolved to <a class="dropdown-item" href="http://localhost/opencart/upload/index.php?route=account/register&language=en-gb">Register</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    53 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+

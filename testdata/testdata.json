@@ -1,0 +1,15 @@
+[
+    {
+        "TestName": "Valid Login",
+        "Email": "pavanol@abc.com",
+        "Password": "test@123",
+        "expected": "Success"
+    },
+    {
+        "TestName": "Invalid Login",
+        "Email": "pavan.oliveir2@example.com",
+        "Password": "password1234",
+        "expected": "failure",
+        "ErrMsg": "Warning: No match for E-Mail Address and/or Password."
+    }
+]

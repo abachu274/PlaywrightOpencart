@@ -1,0 +1,3 @@
+firstName,lastname,email,password,expected
+valid,login,valid@gamil.com,valid@123,success
+invalid,login,invalid@gamil.com,invalid@123,success

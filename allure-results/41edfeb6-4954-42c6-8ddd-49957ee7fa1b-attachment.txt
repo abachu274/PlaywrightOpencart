@@ -1,0 +1,6 @@
+Error Occurred while clicking on my account: Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByText('My Account')
+    - waiting for" https://demo.opencart.com/" navigation to finish...
+    - navigated to "https://demo.opencart.com/"
+

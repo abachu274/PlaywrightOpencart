@@ -1,0 +1,8 @@
+Error Occurred while clicking on my account: Error: locator.click: Error: strict mode violation: getByText('My Account') resolved to 3 elements:
+    1) <span class="d-none d-lg-inline">My Account</span> aka getByRole('link', { name: ' My Account ' })
+    2) <h5>My Account</h5> aka getByRole('heading', { name: 'My Account' })
+    3) <a href="http://localhost/opencart/upload/index.php?route=account/account&language=en-gb">My Account</a> aka getByRole('link', { name: 'My Account', exact: true })
+
+Call log:
+  - waiting for getByText('My Account')
+

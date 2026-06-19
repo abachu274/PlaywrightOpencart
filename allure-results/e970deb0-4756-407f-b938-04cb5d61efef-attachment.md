@@ -1,0 +1,81 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: LoginWithDatadriven.spec.ts >> Login with json data: Valid Login @dataDriven
+- Location: tests\LoginWithDatadriven.spec.ts:31:5
+
+# Error details
+
+```
+Error: locator.fill: value: expected string, got undefined
+```
+
+# Test source
+
+```ts
+  1  | import {Page,Locator} from "@playwright/test"
+  2  | export class loginpage{
+  3  | 
+  4  |     private readonly page:Page;
+  5  |     private readonly Entremail:Locator;
+  6  |     private readonly Entrpassword:Locator;
+  7  |     private readonly Loginbtn:Locator;
+  8  |     private readonly confirmLogin:Locator;
+  9  |     private readonly confirmAccountPage:Locator;
+  10 |     private readonly loginErr:Locator;
+  11 | 
+  12 |     constructor(page:Page){
+  13 |         this.page=page;
+  14 |         this.Entremail=page.locator("input[name='email']");
+  15 |         this.Entrpassword=page.locator("input[name='password']");
+  16 |         this.Loginbtn=page.locator("//button[text()='Login']")
+  17 |         this.confirmLogin=page.locator("//*[ @class='breadcrumb']//a[text()='Login']")
+  18 |         this.confirmAccountPage=page.locator("//h1[text()='My Account']");
+  19 |         this.loginErr=page.locator("//*[text()=' Warning: No match for E-Mail Address and/or Password. ']");
+  20 |     }
+  21 | 
+  22 |     async confirmLoginPage():Promise<boolean>{
+  23 |         try{
+  24 |             await this.confirmLogin.waitFor({state:'visible',timeout:10000});
+  25 |             return true;
+  26 |         }catch{
+  27 |             return false;
+  28 |         }
+  29 |     }
+  30 | 
+  31 |     async enteremail(email:string){
+  32 |         await this.Entremail.fill(email);
+  33 |     }
+  34 | 
+  35 |     async enterpassword(password:string){
+> 36 |         await this.Entrpassword.fill(password);
+     |                                 ^ Error: locator.fill: value: expected string, got undefined
+  37 |     }
+  38 | 
+  39 |     async loginBtn(){
+  40 |         await this.Loginbtn.click();
+  41 |     }
+  42 | 
+  43 |     async confirmAccPage():Promise<boolean>{
+  44 |         try{
+  45 |             await this.confirmAccountPage.waitFor({state:'visible',timeout:10000});
+  46 |             return true;
+  47 |         }catch{
+  48 |             return false;
+  49 |         }
+  50 |     }
+  51 | 
+  52 |     async getLoginErr(){
+  53 | 
+  54 |         return (this.loginErr.textContent());
+  55 |     
+  56 |     }
+  57 | 
+  58 |     
+  59 | }
+```
